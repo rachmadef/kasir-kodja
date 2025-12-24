@@ -1,0 +1,116 @@
+<div class="space-y-6">
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+            <h2 class="text-xl font-semibold text-gray-800">Data User</h2>
+            <p class="text-sm text-gray-500">Kelola akun admin dan kasir</p>
+        </div>
+
+        <button id="btnAddUser"
+            class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm cursor-pointer">
+            + Tambah User
+        </button>
+
+    </div>
+
+    <!-- Table -->
+    <div class="bg-white rounded-xl shadow">
+        <div class="overflow-x-auto">
+            <table class="min-w-full text-sm">
+                <thead class="bg-gray-50 text-gray-600">
+                    <tr>
+                        <th class="px-6 py-3 text-left">Nama</th>
+                        <th class="px-6 py-3 text-left">Email</th>
+                        <th class="px-6 py-3 text-left">Role</th>
+                        <th class="px-6 py-3 text-left">Status</th>
+                        <th class="px-6 py-3 text-center">Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="userTable" class="divide-y">
+                    <!-- dummy data -->
+                    <tr>
+                        <td class="px-6 py-4">Admin Kodja</td>
+                        <td class="px-6 py-4">admin@kodja.com</td>
+                        <td class="px-6 py-4">
+                            <span class="badge badge-indigo">Admin</span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="badge badge-emerald">Aktif</span>
+                        </td>
+                        <td class="px-6 py-4 text-center space-x-2">
+                            <button class="text-sky-600 hover:underline cursor-pointer">Edit</button>
+                            <button class="text-red-600 hover:underline cursor-pointer">Hapus</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="px-6 py-4">Kasir A</td>
+                        <td class="px-6 py-4">kasir@kodja.com</td>
+                        <td class="px-6 py-4">
+                            <span class="badge badge-sky">Karyawan</span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="badge badge-yellow">Nonaktif</span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <div class="flex justify-center gap-3">
+                                <button class="text-sky-600 hover:underline cursor-pointer">
+                                    Edit
+                                </button>
+                                <button class="text-red-600 hover:underline cursor-pointer">
+                                    Hapus
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Tambah User -->
+<div id="userModal" class="fixed inset-0 bg-black/40 hidden flex items-center justify-center z-50 px-2">
+    <div
+        class="bg-white w-[90%] sm:max-w-md rounded-xl shadow p-4 sm:p-6
+               space-y-4 animate-scaleIn max-h-[90vh] overflow-y-auto">
+
+        <h3 class="text-lg font-semibold text-gray-800 text-center sm:text-left">
+            Tambah User
+        </h3>
+
+        <div class="space-y-3">
+            <input type="text" placeholder="Nama" class="form-input">
+
+            <input type="email" placeholder="Email" class="form-input">
+
+            <input type="password" placeholder="Password" class="form-input">
+
+            <select class="form-input">
+                <option value="">Pilih Role</option>
+                <option value="admin">Admin</option>
+                <option value="karyawan">Karyawan</option>
+            </select>
+
+            <select class="form-input">
+                <option value="aktif">Aktif</option>
+                <option value="nonaktif">Nonaktif</option>
+            </select>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-end gap-2 pt-4">
+            <button
+                id="closeUserModal"
+                class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg w-full sm:w-auto">
+                Batal
+            </button>
+
+            <button
+                class="px-4 py-2 bg-indigo-600 text-white rounded-lg w-full sm:w-auto">
+                Simpan
+            </button>
+        </div>
+    </div>
+</div>

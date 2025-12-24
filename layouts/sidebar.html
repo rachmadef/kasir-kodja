@@ -1,0 +1,113 @@
+<aside class="w-64 bg-white h-full flex flex-col">
+
+    <!-- Brand -->
+    <div class="h-16 flex items-center px-6 bg-gradient-to-r from-sky-600 to-indigo-700 shadow-md relative overflow-hidden">
+
+        <!-- Decorative layers -->
+        <div class="absolute inset-0 bg-white/5"></div>
+        <div class="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-white/10"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex items-center gap-4">
+
+            <!-- Logo -->
+            <div class="h-10 w-10 bg-white/20 rounded-xl flex items-center justify-center p-2 shadow">
+                <img src="./assets/images/icon-white.png" alt="Kasir Kodja Logo" class="h-full w-full object-contain">
+            </div>
+
+            <!-- Divider -->
+            <div class="h-8 w-px bg-white/30"></div>
+
+            <!-- Text -->
+            <div class="leading-tight">
+                <h1 class="text-base font-semibold text-white">
+                    Kasir Kodja
+                </h1>
+                <p class="text-xs text-white/80">
+                    POS System
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Menu -->
+    <nav class="flex-1 px-3 py-4 text-sm space-y-1">
+
+        <!-- Dashboard -->
+        <a href="#" data-page="dashboard" data-role="admin" class="sidebar-item">
+            <svg class="icon text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m4-8v8m5-13l2 2" />
+            </svg>
+            Dashboard
+        </a>
+
+        <!-- Data User -->
+        <a href="#" data-page="users" data-role="admin" class="sidebar-item admin-only">
+            <svg class="icon text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 20h5v-2a4 4 0 00-4-4h-1m-4 6H2v-2a4 4 0 014-4h1m4-4a4 4 0 100-8 4 4 0 000 8z" />
+            </svg>
+            Data User
+        </a>
+
+        <!-- Kategori -->
+        <a href="#" data-page="categories" data-role="admin" class="sidebar-item admin-only">
+            <svg class="icon text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
+            Data Kategori
+        </a>
+
+        <!-- Produk -->
+        <a href="#" data-page="products" data-role="admin" class="sidebar-item admin-only">
+            <svg class="icon text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M20 13V7a2 2 0 00-2-2H6a2 2 0 00-2 2v6m16 0l-8 5-8-5" />
+            </svg>
+            Data Produk
+        </a>
+
+        <!-- Pesanan -->
+        <a href="#" data-page="orders" data-role="admin,karyawan" class="sidebar-item">
+            <svg class="icon text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5h6m2 14H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2z" />
+            </svg>
+            Data Pesanan
+        </a>
+
+        <!-- POS -->
+        <a href="#" data-page="pos" data-role="admin,karyawan" class="sidebar-item">
+            <svg class="icon text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2" />
+            </svg>
+            POS
+        </a>
+
+        <!-- Laporan -->
+        <a href="#" data-page="report" data-role="admin" class="sidebar-item admin-only">
+            <svg class="icon text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 17v-2a4 4 0 118 0v2M7 7h10" />
+            </svg>
+            Laporan
+        </a>
+
+    </nav>
+
+    <!-- Logout -->
+    <div class="px-4 py-3 bg-slate-900">
+        <button id="logoutBtn"
+            class="flex items-center gap-3 text-white bg-red-600 hover:bg-red-800 px-3 py-2 rounded w-full cursor-pointer">
+            <svg class="icon text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7" />
+            </svg>
+            Logout
+        </button>
+    </div>
+
+</aside>

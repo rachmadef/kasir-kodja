@@ -1,0 +1,123 @@
+<div class="space-y-6">
+
+  <!-- Header -->
+  <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+    <div>
+      <h2 class="text-xl font-semibold text-gray-800">Data Pesanan</h2>
+      <p class="text-sm text-gray-500">Kelola transaksi dan status pembayaran</p>
+    </div>
+
+    <button
+      id="btnAddOrder"
+      class="w-full lg:w-auto bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm">
+      + Tambah Pesanan
+    </button>
+  </div>
+
+  <!-- Tools -->
+  <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+
+    <!-- Search -->
+    <div class="relative w-full md:max-w-sm">
+      <input
+        id="orderSearch"
+        type="text"
+        placeholder="Cari invoice / pelanggan / metode..."
+        class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg
+               focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+      <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
+    </div>
+
+    <!-- Filter -->
+    <div class="flex gap-3">
+      <select id="orderStatusFilter" class="form-input">
+        <option value="all">Semua Status</option>
+        <option value="lunas">Lunas</option>
+        <option value="belum lunas">Belum Lunas</option>
+      </select>
+
+      <select id="orderMethodFilter" class="form-input">
+        <option value="all">Semua Metode</option>
+        <option value="va">VA</option>
+        <option value="e-wallet">E-Wallet</option>
+        <option value="tunai">Tunai</option>
+        <option value="cod">COD</option>
+        <option value="transfer bank">Transfer Bank</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Table -->
+  <div class="bg-white rounded-xl shadow">
+
+    <div class="overflow-x-auto">
+      <table class="min-w-[1100px] w-full text-sm">
+        <thead class="bg-gray-50 text-gray-600">
+          <tr>
+            <th class="px-6 py-3 text-left">Invoice</th>
+            <th class="px-6 py-3 text-left">Tanggal</th>
+            <th class="px-6 py-3 text-left">Pelanggan</th>
+            <th class="px-6 py-3 text-left">Metode</th>
+            <th class="px-6 py-3 text-left">Total</th>
+            <th class="px-6 py-3 text-left">Status</th>
+            <th class="px-6 py-3 text-center">Aksi</th>
+          </tr>
+        </thead>
+
+        <tbody id="orderTable" class="divide-y">
+
+          <!-- Dummy Row 1 -->
+          <tr class="order-row"
+              data-invoice="INV-0001"
+              data-customer="Budi"
+              data-method="tunai"
+              data-status="lunas">
+            <td class="px-6 py-4 font-medium text-gray-800">INV-0001</td>
+            <td class="px-6 py-4">2025-12-24</td>
+            <td class="px-6 py-4">Budi</td>
+            <td class="px-6 py-4">Tunai</td>
+            <td class="px-6 py-4">Rp 45.000</td>
+            <td class="px-6 py-4">
+              <span class="badge badge-emerald">Lunas</span>
+            </td>
+            <td class="px-6 py-4 text-center">
+              <div class="flex justify-center gap-3">
+                <button class="text-sky-600 hover:underline" data-action="detail" data-id="1">Detail</button>
+                <button class="text-indigo-600 hover:underline" data-action="print" data-id="1">Print</button>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Dummy Row 2 -->
+          <tr class="order-row"
+              data-invoice="INV-0002"
+              data-customer="Siti"
+              data-method="e-wallet"
+              data-status="belum lunas">
+            <td class="px-6 py-4 font-medium text-gray-800">INV-0002</td>
+            <td class="px-6 py-4">2025-12-24</td>
+            <td class="px-6 py-4">Siti</td>
+            <td class="px-6 py-4">E-Wallet</td>
+            <td class="px-6 py-4">Rp 28.000</td>
+            <td class="px-6 py-4">
+              <span class="badge badge-yellow">Belum Lunas</span>
+            </td>
+            <td class="px-6 py-4 text-center">
+              <div class="flex justify-center gap-3">
+                <button class="text-sky-600 hover:underline" data-action="detail" data-id="2">Detail</button>
+                <button class="text-indigo-600 hover:underline" data-action="print" data-id="2">Print</button>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <p id="noOrderFound" class="hidden text-center text-sm text-gray-500 py-4">
+      Pesanan tidak ditemukan
+    </p>
+
+  </div>
+</div>

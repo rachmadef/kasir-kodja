@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Kasir Kodja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/icon-white.png">
+
+    <!-- Tailwind Output -->
+    <link rel="stylesheet" href="assets/css/output.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Overlay (mobile) -->
+    <div id="sidebarOverlay" class="fixed inset-0 bg-black/40 z-40 hidden lg:hidden">
+    </div>
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed lg:static z-50 lg:z-auto
+             inset-y-0 left-0 w-64
+             transform -translate-x-full lg:translate-x-0
+             transition-transform duration-300 ease-in-out">
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col w-full">
+
+            <!-- Navbar -->
+            <div id="navbar"></div>
+
+            <!-- Page Content -->
+            <main id="content" class="flex-1 p-4 sm:p-6 overflow-y-auto bg-gray-100">
+
+                <!-- Welcome State -->
+                <div id="welcomeState" class="h-full flex items-center justify-center">
+
+                    <div class="max-w-xl w-full bg-white rounded-2xl shadow p-8 text-center space-y-6">
+
+                        <div class="mx-auto w-16 h-16 bg-indigo-600 rounded-xl
+                  flex items-center justify-center text-white text-3xl font-bold">
+                            👋
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800">
+                                Selamat Datang
+                            </h2>
+                            <p class="text-gray-500 mt-1">
+                                di Aplikasi Kasir Kodja
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
+                            Anda login sebagai
+                            <span id="welcomeRole" class="font-semibold text-indigo-600">
+                                -
+                            </span>
+                        </div>
+
+                        <p class="text-sm text-gray-500">
+                            Silakan pilih menu di sidebar untuk mulai bekerja
+                        </p>
+
+                    </div>
+                </div>
+
+            </main>
+
+
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/auth.js"></script>
+    <script src="./assets/js/sidebar.js"></script>
+    <script src="./assets/js/users.js"></script>
+    <script src="./assets/js/categories.js"></script>
+    <script src="./assets/js/products.js"></script>
+    <script src="./assets/js/orders.js"></script>
+    <script>
+        if (localStorage.getItem("isLogin") !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+
+</html>
